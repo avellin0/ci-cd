@@ -11,6 +11,7 @@ export class CreateAccount{
       password
     } 
 
+
     const userType = Object.values(user).every(value => typeof value === 'string')
 
     if(!userType){

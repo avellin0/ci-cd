@@ -4,7 +4,6 @@ const routes = Router()
 import {CreateAccount} from '../controller/CreateAccount'
 const user = new CreateAccount()
 
-
 routes.post('/create_account', user.handle)
 
 
