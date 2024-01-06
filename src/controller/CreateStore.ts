@@ -17,5 +17,6 @@ export class CreateStore{
     }
 
     res.json(user)
+    
   }
 }
