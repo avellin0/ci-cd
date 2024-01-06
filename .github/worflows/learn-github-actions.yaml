@@ -1,13 +1,20 @@
-name: learn-github-actions
-run-name: Picorovisck is learning Github Actions
-on: [push]
+name: Continuos Integration
+
+on: [push, pull_request]
+
 jobs:
-  check-bats-version:
-    runs-on: windows-latest
+
+  continuos-integration:
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v3
+      - name: Using Node.js
+        uses: actions/setup-node@v3
         with:
-          node-version: '20'
-      - run: npm install -g bats
-      - run: b
+          node-version: 20.x
+
+        - name: run install build and test
+          run: |
+            npm install
+            npm run dev
+            npm run test
